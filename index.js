@@ -1,24 +1,27 @@
-const botsettings = require('./botsettings.json');
+const {token, prefix} = require('./config.json');
 const discord = require('discord.js');
 
 const bot = new discord.Client();
-bot.login(botsettings.token);
+bot.login(token);
 
 bot.on('ready', async () => {
     console.log(`${bot.user.username} is online!`);
 })
 
 bot.on('message', async message => {
-    if(message.channel.name != "bot-testing"){
-        return;
-    }
+    if (message.content.startsWith(prefix) || message.author.bot) return;
+    if (message.channel.name != "bot-testing") return;
     
-    let prefix = botsettings.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
+    const args = message.content.slice(prefix.length).split(' ');
+    const cmd = args.shift().toLowerCase();
 
-    if(cmd === `${prefix}ping`){
-        return message.channel.send("pong!");
+    if (cmd === `ping`){
+        message.channel.send('Pong.');
+    } else if (cmd === `beep`) {
+        message.channel.send('Boop.');
+    } else if (cmd === `server`) {
+        message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+    } else if (cmd === `user-info`) {
+        message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
     }
 })
