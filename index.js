@@ -9,11 +9,11 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
-} 
+};
 
 client.once('ready', () => {
     console.log(`${client.user.username} is online!`);
-})
+});
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
