@@ -21,10 +21,7 @@ const embed = new Discord.RichEmbed()
 module.exports = {
     name: "embed",
     description: "See an example of a Discord embed.",
-    execute(channel, embed) {
-        channel.send(embed);
+    execute(message) {
+        message.channel.send(embed);
     }
 };
-
-// This might be a non-working example
-// TO-D0: troubleshoot

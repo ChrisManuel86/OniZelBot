@@ -13,6 +13,7 @@ module.exports = {
 
         if (!args.length) {
 			const name = args[0].toLowerCase();
+			console.log(name);
 			const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
 			if (!command) {
