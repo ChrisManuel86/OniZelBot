@@ -12,10 +12,10 @@ module.exports = {
         const { commands } = message.client;
 
         if (!args.length) {
+			console.log(args[0].toLowerCase());
 			const name = args[0].toLowerCase();
-			console.log(name);
 			const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
-
+			
 			if (!command) {
 				return message.reply('that\'s not a valid command!');
 			}
@@ -27,7 +27,7 @@ module.exports = {
 			if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
 
 			data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
-
+			
 			message.channel.send(data, { split: true });
         }
 	}

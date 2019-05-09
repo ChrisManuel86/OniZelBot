@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 // Create embed object
 const embed = new Discord.RichEmbed()
     .setColor('#0099ff')
-    .setTitle('Some title')
+    .setTitle('Oni-Jee Minecraft Portal')
     .setURL('https://onijee.minecraftnoob.com/')
     .setAuthor('OniLink86', 'https://onijee.minecraftnoob.com/img/onilink86.png', 'https://onijee.minecraftnoob.com/')
     .setDescription('This is an example embed with different types of parameters')
