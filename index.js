@@ -19,9 +19,7 @@ for (const file of commandFiles) {
 };
 
 // Once the client is ready, display (in the console) that the bot is online.
-client.once('ready', () => {
-    console.log(`${client.user.username} is online!`);
-});
+client.once('ready', () => {console.log(`${client.user.username} is online!`);});
 
 // Upon receiving a message in any channel, check the following conditions
 client.on('message', message => {
