@@ -24,6 +24,7 @@ module.exports = {
         if (!args.length) {
 			embedHelp.setTitle('Help Command')
 				.setDescription('Here\'s a list of all my commands:')
+				.addBlankField()
 				.addField('Available Commands' ,commands.map(command => command.name).join(', '))
 				.addField('Command Usage', `You can send \`${prefix}help [command name]\` to get info on a specific command!`);
 
