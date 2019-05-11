@@ -30,14 +30,14 @@ module.exports = {
 
 			return message.channel.send(embedHelp);
 		}
-		console.log(args[0]);
 		const name = args[0].toLowerCase();
 		const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 		
 		if (!command) {return message.reply('that\'s not a valid command!');}
 
-		embedCommand.setTitle('**Name:**')
-			.setDescription(`${command.name}`);
+		embedCommand.setTitle('**Command Name:**')
+			.setDescription(`${command.name}`)
+			.addBlankField();
 
 		if (command.aliases) embedCommand.addField('**Aliases:**', `${command.aliases.join(', ')}`);
 		if (command.description) embedCommand.addField('**Description:**', `${command.description}`);
