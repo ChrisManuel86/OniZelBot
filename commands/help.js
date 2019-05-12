@@ -1,16 +1,18 @@
 // Initialize prefix variable for use in this file
 const { prefix } = require('../config.json');
+const { embedColor } = require('../constants.json');
+
 
 // Create Discord object
 const Discord = require('discord.js');
 
 // Create embedHelp object
 let embedHelp = new Discord.RichEmbed()
-	.setColor('#0099ff');
+	.setColor(embedColor);
 
 // Create embedCommand object
 let embedCommand = new Discord.RichEmbed()
-	.setColor('#0099ff');
+	.setColor(embedColor);
 
 module.exports = {
 	name: 'help',

@@ -1,3 +1,14 @@
+// Initialize prefix variable for use in this file
+const { prefix } = require('../config.json');
+const { embedColor } = require('../constants.json');
+
+// Create Discord object
+const Discord = require('discord.js');
+
+// create embedError object
+let embedError = new Discord.RichEmbed()
+    .setColor(embedColor);
+
 module.exports = {
     name: "roles",
     description: "Choose from the available roles on the server. See #available-roles for additional info on roles.",
