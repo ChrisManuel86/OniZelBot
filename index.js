@@ -18,9 +18,6 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 };
 
-// Once the client is ready, display (in the console) that the bot is online.
-client.once('ready', () => {console.log(`${client.user.username} is online!`);});
-
 // Upon receiving a message in any channel, check the following conditions
 client.on('message', message => {
 	// If the message doesn't start with the prefix, or is from the bot itself, ignore the message
@@ -50,3 +47,6 @@ client.on('message', message => {
 
 // Log into the discord server
 client.login(token);
+
+// Once the client is ready, display (in the console) that the bot is online.
+client.once('ready', () => {console.log(`${client.user.username} is online!`);});
