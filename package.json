@@ -1,6 +1,6 @@
 {
   "name": "OniZelBot",
-  "version": "0.0.1",
+  "version": "0.2.3",
   "description": "A helpful but to take the burden off of mods",
   "main": "index.js",
   "dependencies": {
