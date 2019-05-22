@@ -1,6 +1,11 @@
 // Set Discord object and embedColor object
-const {embedColor} = require('../constants.json');
+const {embedColorHex} = require('../constants.json');
 const Discord = require('discord.js');
+
+// Convert hex value to decimal
+let embedColorDecimal = embedColorHex;
+embedColorDecimal = parseInt(embedColorDecimal);
+
 
 // Set embed object
 let embed = new Discord.RichEmbed();
@@ -10,14 +15,13 @@ module.exports = {
 	description: 'Display info about this server.',
 	execute(message) {
 		embed = {
-			color: embedColor,
+			color: embedColorDecimal,
 			title: `Server name: ${message.guild.name}`,
 			field: [{
 				name: 'Total members:',
 				value: `${message.guild.memberCount}`
 			}]
 		};
-		console.log(embed);
-		message.channel.send(embed);
+		message.channel.send({embed: embed});
 	}
 };
