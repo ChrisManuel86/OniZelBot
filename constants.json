@@ -1,4 +1,5 @@
 {
     "embedColorValue": "#0099ff",
-    "embedColorHex": "0x0099ff"
+    "embedColorHex": "0x0099ff",
+    "blankField": "\u200b"
 }
