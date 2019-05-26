@@ -16,3 +16,21 @@ module.exports = {
         message.channel.send("This command hasn't been fully implemented yet. Please check back later.")
     }
 };
+
+
+/*
+	usage: '[roles name]',
+	cooldown: 5,
+	execute(message, args) {
+        const { commands } = message.client;
+
+        if (!args.length) {
+			embedHelp.setTitle('Help Command')
+				.setDescription('Here\'s a list of all my commands:')
+				.addField('' ,commands.map(command => command.name).join(', '))
+				.addBlankField()
+				.addField('Command Usage', `You can send \`${prefix}help [command name]\` to get info on a specific command!`);
+
+			return message.channel.send(embedHelp);
+        }
+*/
