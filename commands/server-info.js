@@ -3,13 +3,13 @@ const {embedColorHex, blankField} = require('../constants.json');
 const Discord = require('discord.js');
 
 // Set embed object
-let embed = new Discord.RichEmbed();
+let serverInfoEmbed = new Discord.RichEmbed();
 
 module.exports = {
 	name: 'server-info',
 	description: 'Display info about this server.',
 	execute(message) {
-		embed = {
+		serverInfoEmbed = {
 			color: parseInt(embedColorHex),
 			title: `Server name: ${message.guild.name}`,
 			fields: [
@@ -25,6 +25,6 @@ module.exports = {
 			],
 			timestamp: new Date()
 		};
-		message.channel.send({embed: embed});
+		message.channel.send({embed: serverInfoEmbed});
 	}
 };

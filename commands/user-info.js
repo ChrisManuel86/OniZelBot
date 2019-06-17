@@ -1,7 +1,28 @@
+// Set Discord object and embedColor object
+const {embedColorHex, blankField} = require('../constants.json');
+const Discord = require('discord.js');
+
+// Set embed object
+let userInfoEmbed = new Discord.RichEmbed();
+
 module.exports = {
 	name: 'user-info',
 	description: 'Display info about yourself.',
 	execute(message) {
-		message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		userInfoEmbed = {
+			color: parseInt(embedColorHex),
+			title: "Your User Info!",
+			fields: [
+				{
+					name: "Your username:",
+					value: `${message.author.username}`
+				},
+				{
+					name: "Your ID:",
+					value: `${message.author.id}`
+				}
+			]
+		}
+		message.channel.send({embed: userInfoEmbed});
 	}
 };
