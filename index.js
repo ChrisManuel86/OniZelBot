@@ -45,6 +45,22 @@ client.on('message', message => {
 	}
 });
 
+client.on("guildMemberAdd", (member) => {
+	// If the message is not in the channel "join-leave-log", ignore the message
+    if (message.channel.name != "join-leave-log") return;
+
+	// console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
+	member.guild.channels.find(c => c.name === "welcome").send(`"${member.user.username}" has joined this server`);
+});
+
+client.on("guildMemberRemove", (member) => {
+	// If the message is not in the channel "join-leave-log", ignore the message
+    if (message.channel.name != "join-leave-log") return;
+
+	// console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
+	member.guild.channels.find(c => c.name === "welcome").send(`"${member.user.username}" has joined this server`);
+});
+
 // Log into the discord server
 client.login(token);
 

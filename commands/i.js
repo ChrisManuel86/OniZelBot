@@ -3,15 +3,15 @@ const {embedColorHex} = require('../constants.json');
 const Discord = require('discord.js');
 
 // Set embed object
-let userInfoEmbed = new Discord.RichEmbed();
+let agreeEmbed = new Discord.RichEmbed();
 
 module.exports = {
 	name: 'user-info',
 	description: 'Display info about yourself.',
 	execute(message) {
-		userInfoEmbed = {
+		agreeEmbed = {
 			color: parseInt(embedColorHex),
-			title: "Your User Info!",
+			title: "Welcome to the OniFam!!",
 			fields: [
 				{
 					name: "Your username:",
@@ -23,6 +23,6 @@ module.exports = {
 				}
 			]
 		}
-		message.channel.send({embed: userInfoEmbed});
+		message.channel.send({embed: agreeEmbed});
 	}
 };
