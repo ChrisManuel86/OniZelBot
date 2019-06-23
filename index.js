@@ -46,23 +46,25 @@ client.on('message', message => {
 });
 
 client.on("guildMemberAdd", (member) => {
-	// If the message is not in the channel "join-leave-log", ignore the message
-    if (message.channel.name != "join-leave-log") return;
-
-	// console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
-	member.guild.channels.find(c => c.name === "welcome").send(`"${member.user.username}" has joined this server`);
+	// Send message to join-leave-log indicating when a new member joins the server
+	member.guild.channels.find(c => c.name === "join-leave-log").send(`"${member.user.username}" has joined the server.`);
 });
 
 client.on("guildMemberRemove", (member) => {
-	// If the message is not in the channel "join-leave-log", ignore the message
-    if (message.channel.name != "join-leave-log") return;
-
-	// console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
-	member.guild.channels.find(c => c.name === "welcome").send(`"${member.user.username}" has joined this server`);
+	// Send message to join-leave-log indicating when a new member leaves the server
+	member.guild.channels.find(c => c.name === "join-leave-log").send(`"${member.user.username}" has left the server.`);
 });
+
+// Capture all client error messages and print to console
+client.on("error", (e) => console.error(e));
+client.on("warn", (e) => console.warn(e));
+// client.on("debug", (e) => console.info(e));
 
 // Log into the discord server
 client.login(token);
 
 // Once the client is ready, display (in the console) that the bot is online.
-client.once('ready', () => {console.log(`${client.user.username} is online!`);});
+client.on('ready', () => {
+	console.log(`${client.user.username} is online!`);
+	client.user.setActivity("Over Heerule", {type: "WATCHING"});
+});
