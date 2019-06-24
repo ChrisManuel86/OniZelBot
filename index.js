@@ -66,5 +66,5 @@ client.login(token);
 // Once the client is ready, display (in the console) that the bot is online.
 client.on('ready', () => {
 	console.log(`${client.user.username} is online!`);
-	client.user.setActivity("Over Heerule", {type: "WATCHING"});
+	client.user.setActivity("over Heerule", {type: "WATCHING"});
 });

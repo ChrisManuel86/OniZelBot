@@ -5,9 +5,6 @@ module.exports = {
     name: "agree",
     description: "Give user the townsfolk role after they have agreed to the rules.",
     execute(message) {
-        if (message.channel.name !== "bot-testing") return;
-        else {
-            message.member.addRole(townsfolkRole).catch(console.error);
-        }
+        message.member.addRole(townsfolkRole);
     }
 };
