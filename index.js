@@ -1,4 +1,4 @@
-// Initilize web server?
+// Initilize web server :thumbsup:
 require('./server.js');
 
 // Initialize file stream reader
@@ -48,13 +48,13 @@ client.on('message', message => {
 	}
 });
 
+// Send message to join-leave-log indicating when a new member joins the server
 client.on("guildMemberAdd", (member) => {
-	// Send message to join-leave-log indicating when a new member joins the server
 	member.guild.channels.find(c => c.name === "join-leave-log").send(`"${member.user.username}" has joined the server.`);
 });
 
+// Send message to join-leave-log indicating when a new member leaves the server
 client.on("guildMemberRemove", (member) => {
-	// Send message to join-leave-log indicating when a new member leaves the server
 	member.guild.channels.find(c => c.name === "join-leave-log").send(`"${member.user.username}" has left the server.`);
 });
 
