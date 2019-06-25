@@ -1,3 +1,6 @@
+// Initilize web server?
+require('./server.js');
+
 // Initialize file stream reader
 const fs = require('fs');
 // Initialize token, and prefix variables
