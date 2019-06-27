@@ -6,7 +6,7 @@ const { embedColorValue } = require('../constants.json');
 const Discord = require('discord.js');
 
 module.exports = {
-	name: 'help',
+	name: 'Help',
 	description: 'List all of my commands or info about a specific command.',
 	aliases: ['commands'],
 	usage: '[command name]',

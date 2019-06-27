@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 let serverInfoEmbed = new Discord.RichEmbed();
 
 module.exports = {
-	name: 'server-info',
+	name: 'Server Info',
 	description: 'Display info about this server.',
 	execute(message) {
 		serverInfoEmbed = {
