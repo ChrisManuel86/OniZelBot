@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 let userInfoEmbed = new Discord.RichEmbed();
 
 module.exports = {
-	name: 'User Info',
+	name: 'user-info',
 	description: 'Display info about yourself.',
 	execute(message) {
 		userInfoEmbed = {

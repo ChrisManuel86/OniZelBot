@@ -6,9 +6,9 @@ const { embedColorValue } = require('../constants.json');
 const Discord = require('discord.js');
 
 module.exports = {
-	name: 'Help',
+	name: 'help',
 	description: 'List all of my commands or info about a specific command.',
-	aliases: ['commands'],
+	aliases: ['help', 'commands'],
 	usage: '[command name]',
 	cooldown: 5,
 	execute(message, args) {
@@ -20,8 +20,9 @@ module.exports = {
 			let embedHelp = new Discord.RichEmbed()
 				.setColor(embedColorValue)
 				.setTitle('Help Command')
-				.setDescription('Here\'s a list of all my commands:')
-				.addField('Command Usage', `You can send \`${prefix}help [command name]\` to get info on a specific command!`);
+				.setDescription('Get a list of available commands.')
+				.addField('Available commands:', commands.map(command => command.name).join(', '))
+				.addField('Command usage:', `You can send \`${prefix}help [command name]\` to get info on a specific command!`);
 
 			return message.channel.send(embedHelp);
 		} else {
