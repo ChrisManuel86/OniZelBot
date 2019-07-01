@@ -1,8 +1,15 @@
-const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const port = 8080;
 
-http.createServer((req, res) => {
+const options = {
+	key: fs.readFileSync('key here'),
+	cert: fs.readFileSync('cert here')
+};
+
+const app = express();
+
+app.use((req, res) => {
 	let responseCode = 404;
 	let content = '404 Error';
 
@@ -17,5 +24,8 @@ http.createServer((req, res) => {
 
 	res.write(content);
 	res.end();
-})
-	.listen(port);
+});
+	
+app.listen(port);
+
+https.createServer(options, app);
