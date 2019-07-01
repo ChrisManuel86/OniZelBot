@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 // Initilize web server :thumbsup:
 require('./server.js');
+=======
+// Initilize web server?
+// require('./server.js');
+>>>>>>> d549ee2f3adeac4149ad6cf083cc4748a881cedd
 
 // Initialize file stream reader
 const fs = require('fs');
 // Initialize token, and prefix variables
 const {token, prefix} = require('./config.json');
+
 // Initialize Discord variable
 const Discord = require('discord.js');
 
@@ -61,7 +67,7 @@ client.on("guildMemberRemove", (member) => {
 // Capture all client error messages and print to console
 client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
-// client.on("debug", (e) => console.info(e));
+client.on("debug", (e) => console.info(e));
 
 // Log into the discord server
 client.login(token);
@@ -69,5 +75,5 @@ client.login(token);
 // Once the client is ready, display (in the console) that the bot is online.
 client.on('ready', () => {
 	console.log(`${client.user.username} is online!`);
-	client.user.setActivity("over Heerule", {type: "WATCHING"});
+	client.user.setActivity("your every move OwO", {type: "WATCHING"});
 });

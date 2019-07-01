@@ -13,9 +13,17 @@ app.use((req, res) => {
 	let responseCode = 404;
 	let content = '404 Error';
 
-	if (req.url === '/') {
-		responseCode = 200;
-		content = fs.readFileSync('./index.html');
+	switch (req.url) {
+		case '/':
+			responseCode = 200;
+			content = fs.readFileSync('./index.html');
+			break;
+		case '/authenticate.js':
+			responseCode = 200;
+			content = fs.readFileSync('./authenticate.js');
+			break;
+		default:
+			break;
 	}
 
 	res.writeHead(responseCode, {
