@@ -49,13 +49,13 @@ client.on('message', message => {
 	}
 });
 
+// Send message to join-leave-log indicating when a new member joins the server
 client.on("guildMemberAdd", (member) => {
-	// Send message to join-leave-log indicating when a new member joins the server
 	member.guild.channels.find(c => c.name === "join-leave-log").send(`"${member.user.username}" has joined the server.`);
 });
 
+// Send message to join-leave-log indicating when a new member leaves the server
 client.on("guildMemberRemove", (member) => {
-	// Send message to join-leave-log indicating when a new member leaves the server
 	member.guild.channels.find(c => c.name === "join-leave-log").send(`"${member.user.username}" has left the server.`);
 });
 
@@ -70,5 +70,5 @@ client.login(token);
 // Once the client is ready, display (in the console) that the bot is online.
 client.on('ready', () => {
 	console.log(`${client.user.username} is online!`);
-	client.user.setActivity("your every move OwO", {type: "WATCHING"});
+	client.user.setActivity("over Hyrule", {type: "WATCHING"});
 });
