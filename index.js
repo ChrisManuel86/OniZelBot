@@ -66,11 +66,11 @@ client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
 // client.on("debug", (e) => console.info(e));
 
-// Log into the discord server
-client.login(token);
-
 // Once the client is ready, display (in the console) that the bot is online.
 client.on('ready', () => {
 	console.log(`${client.user.username} is online!`);
-	client.user.setActivity("over Hyrule", {type: "WATCHING"});
+	client.user.setActivity("over Heerule", {type: "WATCHING"});
 });
+
+// Log into the discord server
+client.login(token);
