@@ -5,6 +5,10 @@ module.exports = {
     name: "agree",
     description: "Give user the townsfolk role after they have agreed to the rules.",
     execute(message) {
-        message.member.addRole(townsfolkRole);
+        if (message.channel.name != "waiting-room") {
+            return;
+        } else {
+            message.member.addRole(townsfolkRole);
+        }
     }
 };

@@ -26,8 +26,10 @@ for (const file of commandFiles) {
 client.on('message', message => {
 	// If the message doesn't start with the prefix, or is from the bot itself, ignore the message
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
 	// If the message is not in the channel "bot-testing", ignore the message
-    if (message.channel.name != "bot-testing") return;
+	// uncomment line below when testing to have bot only respond to commands from the "bot-testing" channel
+    // if (message.channel.name != "bot-testing") return;
 	
 	// Initialize args variable by anylizing the message sent for any additional words after the prefix, and command word, then separate them out based upon the number of spaces
 	const args = message.content.slice(prefix.length).split(/ +/);
