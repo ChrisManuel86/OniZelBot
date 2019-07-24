@@ -4,11 +4,13 @@
   "description": "A helpful but to take the burden off of mods",
   "main": "index.js",
   "dependencies": {
+    "bufferutil": "^4.0.1",
     "discord.js": "^11.4.2",
-    "eslint": "^5.16.0",
-    "nodemon": "^1.19.0"
+    "eslint": "^5.16.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
   "scripts": {
     "start": "node .",
     "lint": "eslint ."
