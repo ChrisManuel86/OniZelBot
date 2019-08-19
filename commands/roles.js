@@ -8,7 +8,7 @@ const Discord = require('discord.js');
 // create embedError object
 let embedError = new Discord.RichEmbed()
     .setColor(parseInt(embedColorValue));
-/*
+
 module.exports = {
     name: "roles",
     cooldown: 5,
@@ -56,4 +56,3 @@ module.exports = {
         return message.channel.send(embedRoles);
     }
 };
-*/
