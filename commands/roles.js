@@ -23,6 +23,8 @@ module.exports = {
                     break;
                 case 'Hylian Royal Gaurd':
                     break;
+                case 'Townsfolk (regular)':
+                    break;
                 case 'OniMinions':
                     break;
                 case 'Admin':
@@ -38,8 +40,6 @@ module.exports = {
                 case 'OniZelBot':
                     break;
                 case '1 Hylian Year Older':
-                    break;
-                case "":
                     break;
                 default:
                     return role.name;
