@@ -51,7 +51,8 @@ module.exports = {
             .setTitle('Help Command')
             .setDescription('Here\'s a list of available roles.')
             .addField('Available roles:', roles.map(removeNoneAvaileableRoles))
-            .addField('Getting a role:', `In order to assign a role to yourself, send "${prefix}give [role name]", and the role will be assigned to you.`)
+            .addField('Getting a role:', `In order to assign a role to yourself, type "${prefix}addrole [role name]", and the role will be added.`)
+            .addField('Getting a role:', `In order to remove an assigned role from yourself, type "${prefix}removerole [role name]", and the role will be removed.`)
     
         return message.channel.send(embedRoles);
     }
