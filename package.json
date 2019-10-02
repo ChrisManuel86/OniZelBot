@@ -5,11 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "bufferutil": "^4.0.1",
-    "discord.js": "^11.4.2",
-    "eslint": "^5.16.0"
+    "discord.js": "^11.5.1",
+    "eslint": "^5.16.0",
+    "eslint-utils": "^1.4.2"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.3"
   },
   "scripts": {
     "start": "node .",
